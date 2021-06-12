@@ -1,9 +1,169 @@
 apiVersion: v1
 entries:
+  cert-manager:
+  - annotations:
+      category: CertificateAuthority
+    apiVersion: v2
+    appVersion: 1.3.1
+    created: "2021-06-12T10:39:52.138623-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Cert Manager is a Kubernetes add-on to automate the management and
+      issuance of TLS certificates from various issuing sources.
+    digest: 6c0eb9977d33a2c1d5cb217436c342679a8e28c4c8755726706f98b5594e5cc6
+    home: https://github.com/jetstack/cert-manager
+    icon: https://bitnami.com/assets/stacks/cert-manager/img/cert-manager-stack-220x234.png
+    keywords:
+    - go
+    - security
+    - tls
+    - certificate
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: cert-manager
+    sources:
+    - https://github.com/bitnami/bitnami-docker-cert-manager
+    - https://github.com/bitnami/bitnami-docker-cert-manager-webhook
+    - https://github.com/bitnami/bitnami-docker-cainjector
+    - https://github.com/jetstack/cert-manager
+    urls:
+    - https://bah3.github.io/helm-charts/cert-manager-0.1.3.tgz
+    version: 0.1.3
+  common:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.5.2
+    created: "2021-06-12T10:39:52.139853-04:00"
+    description: A Library Helm Chart for grouping common logic between bitnami charts.
+      This chart is not deployable by itself.
+    digest: fc294e5b7e970042a299f01e2a73e0f30036ef9a848d8f4749e7613e0a444bc7
+    home: https://github.com/bitnami/charts/tree/master/bitnami/common
+    icon: https://bitnami.com/downloads/logos/bitnami-mark.png
+    keywords:
+    - common
+    - helper
+    - template
+    - function
+    - bitnami
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: common
+    sources:
+    - https://github.com/bitnami/charts
+    - http://www.bitnami.com/
+    type: library
+    urls:
+    - https://bah3.github.io/helm-charts/common-1.5.2.tgz
+    version: 1.5.2
+  consul:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 1.9.6
+    created: "2021-06-12T10:39:52.142556-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Highly available and distributed service discovery and key-value
+      store designed with support for the modern data center to make distributed systems
+      and configuration easy.
+    digest: 63ddd8770adc983be2fed7cef6ad24b77d9d2874b95c01f595dc33fd31004f78
+    home: https://github.com/bitnami/charts/tree/master/bitnami/consul
+    icon: https://bitnami.com/assets/stacks/consul/img/consul-stack-220x234.png
+    keywords:
+    - discovering
+    - configuring
+    - services
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: consul
+    sources:
+    - https://github.com/bitnami/bitnami-docker-consul
+    - https://www.consul.io/
+    urls:
+    - https://bah3.github.io/helm-charts/consul-9.2.13.tgz
+    version: 9.2.13
+  contour:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-06-12T10:39:52.148435-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Contour Ingress controller for Kubernetes
+    digest: 463f4b2d5e914423917565e22c1397402162e7d906da05b8599e52c561ad0932
+    home: https://github.com/bitnami/charts/tree/master/bitnami/contour
+    icon: https://bitnami.com/assets/stacks/contour/img/contour-stack-220x234.png
+    keywords:
+    - ingress
+    - envoy
+    - contour
+    maintainers:
+    - name: cellebyte
+      url: https://github.com/Cellebyte
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: contour
+    sources:
+    - https://github.com/projectcontour/contour
+    - https://github.com/envoyproxy/envoy
+    - https://github.com/bitnami/bitnami-docker-contour
+    - https://projectcontour.io
+    urls:
+    - https://bah3.github.io/helm-charts/contour-4.3.6.tgz
+    version: 4.3.6
+  elasticsearch:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 7.13.1
+    created: "2021-06-12T10:39:52.159254-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: global.kibanaEnabled
+      name: kibana
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.x.x
+    description: A highly scalable open-source full-text search and analytics engine
+    digest: f0200c945b0380cb50f246aa74d519aa8076f07a3f736f74cfddddad88204fe9
+    home: https://github.com/bitnami/charts/tree/master/bitnami/elasticsearch
+    icon: https://bitnami.com/assets/stacks/elasticsearch/img/elasticsearch-stack-220x234.png
+    keywords:
+    - elasticsearch
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: elasticsearch
+    sources:
+    - https://github.com/bitnami/bitnami-docker-elasticsearch
+    - https://www.elastic.co/products/elasticsearch
+    urls:
+    - https://bah3.github.io/helm-charts/elasticsearch-15.3.0.tgz
+    version: 15.3.0
   gitea:
   - apiVersion: v2
     appVersion: 1.14.1
-    created: "2021-06-11T17:34:48.078613-04:00"
+    created: "2021-06-12T10:39:52.184968-04:00"
     dependencies:
     - condition: gitea.cache.builtIn.enabled
       name: memcached
@@ -22,7 +182,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 8.0.0
     description: Gitea Helm chart for Kubernetes
-    digest: c2db419417b482769557b6618aac0fa080063d7cb8b9f49581bed09c0c1fba22
+    digest: e18a5e10a4345d7e75d1826f9038311e4e8965f34ed4552ea97d5a3a7494c98a
     icon: https://docs.gitea.io/images/gitea.png
     keywords:
     - git
@@ -49,4 +209,656 @@ entries:
     urls:
     - https://bah3.github.io/helm-charts/gitea-3.0.0.tgz
     version: 3.0.0
-generated: "2021-06-11T17:34:48.060351-04:00"
+  grafana:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 7.5.7
+    created: "2021-06-12T10:39:52.190888-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Grafana is an open source, feature rich metrics dashboard and graph
+      editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB(TM).
+    digest: 982d4c3a6831e8352a7d1b372c0840dcbd3da7cb556e879290e20c39dd4735d8
+    home: https://github.com/bitnami/charts/tree/master/bitnami/grafana
+    icon: https://bitnami.com/assets/stacks/grafana/img/grafana-stack-220x234.png
+    keywords:
+    - analytics
+    - monitoring
+    - metrics
+    - logs
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: grafana
+    sources:
+    - https://github.com/bitnami/bitnami-docker-grafana
+    - https://grafana.com/
+    urls:
+    - https://bah3.github.io/helm-charts/grafana-5.2.17.tgz
+    version: 5.2.17
+  grafana-operator:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 3.10.1
+    created: "2021-06-12T10:39:52.195956-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Kubernetes Operator based on the Operator SDK for creating and managing
+      Grafana instances and dashboards.
+    digest: b0a244f16bda137d33a378970832d0e3a2037be7471927435a778a903c22be66
+    home: https://github.com/integr8ly/grafana-operator
+    icon: https://bitnami.com/assets/stacks/grafana/img/grafana-stack-220x234.png
+    keywords:
+    - grafana
+    - operator
+    - monitoring
+    maintainers:
+    - name: cellebyte
+      url: cellebyte@gmail.com
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: grafana-operator
+    sources:
+    - https://github.com/integr8ly/grafana-operator
+    - https://github.com/bitnami/bitnami-docker-grafana-operator
+    urls:
+    - https://bah3.github.io/helm-charts/grafana-operator-0.7.3.tgz
+    version: 0.7.3
+  kafka:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.8.0
+    created: "2021-06-12T10:39:52.205453-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    description: Apache Kafka is a distributed streaming platform.
+    digest: 536b8985865d91e54e4fd45d267a017c099b3ea11ba34427832f7d2d31c06d78
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kafka
+    icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: kafka
+    sources:
+    - https://github.com/bitnami/bitnami-docker-kafka
+    - https://kafka.apache.org/
+    urls:
+    - https://bah3.github.io/helm-charts/kafka-12.20.0.tgz
+    version: 12.20.0
+  kibana:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 7.13.1
+    created: "2021-06-12T10:39:52.209862-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Kibana is an open source, browser based analytics and search dashboard
+      for Elasticsearch.
+    digest: f1b65a97552dd0f308662cc0f6e5ff0aadc8bd9e06c712fd4048f9cd1e36827b
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kibana
+    icon: https://bitnami.com/assets/stacks/kibana/img/kibana-stack-220x234.png
+    keywords:
+    - kibana
+    - analytics
+    - monitoring
+    - metrics
+    - logs
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: kibana
+    sources:
+    - https://github.com/bitnami/bitnami-docker-kibana
+    - https://www.elastic.co/products/kibana
+    urls:
+    - https://bah3.github.io/helm-charts/kibana-8.1.6.tgz
+    version: 8.1.6
+  kube-prometheus:
+  - annotations:
+      category: Analytics
+    apiVersion: v2
+    appVersion: 0.48.1
+    created: "2021-06-12T10:39:52.234977-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: exporters.enabled,exporters.node-exporter.enabled
+      name: node-exporter
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    - condition: exporters.enabled,exporters.kube-state-metrics.enabled
+      name: kube-state-metrics
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    description: kube-prometheus collects Kubernetes manifests to provide easy to
+      operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus
+      Operator.
+    digest: 260f8fb357675bf9acf8287a598cfff58874130dec2bda4e74dd9502b4184292
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kube-prometheus
+    icon: https://bitnami.com/assets/stacks/prometheus-operator/img/prometheus-operator-stack-220x234.png
+    keywords:
+    - prometheus
+    - alertmanager
+    - operator
+    - monitoring
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: kube-prometheus
+    sources:
+    - https://github.com/bitnami/bitnami-docker-prometheus-operator
+    - https://github.com/bitnami/bitnami-docker-prometheus
+    - https://github.com/bitnami/bitnami-docker-alertmanager
+    - https://github.com/prometheus-operator/kube-prometheus
+    urls:
+    - https://bah3.github.io/helm-charts/kube-prometheus-6.0.0.tgz
+    version: 6.0.0
+  mariadb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 10.5.10
+    created: "2021-06-12T10:39:52.239564-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Fast, reliable, scalable, and easy to use open-source relational
+      database system. MariaDB Server is intended for mission-critical, heavy-load
+      production systems as well as for embedding into mass-deployed software. Highly
+      available MariaDB cluster.
+    digest: 29f1cfe9e114e0c143b9e733ce4070abdd1eb155f44bf2845e1956782b1e372a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mariadb
+    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - prometheus
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    - https://github.com/prometheus/mysqld_exporter
+    - https://mariadb.org
+    urls:
+    - https://bah3.github.io/helm-charts/mariadb-9.3.14.tgz
+    version: 9.3.14
+  mariadb-galera:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 10.5.10
+    created: "2021-06-12T10:39:52.245477-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: MariaDB Galera is a multi-master database cluster solution for synchronous
+      replication and high availability.
+    digest: ba98449ae314940e1f723dcf5b64aa738e7fdb3637acf1a94e22aa20eec7d356
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mariadb-galera
+    icon: https://bitnami.com/assets/stacks/mariadb-galera/img/mariadb-galera-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - prometheus
+    - galera
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mariadb-galera
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb-galera
+    - https://github.com/prometheus/mysqld_exporter
+    - https://mariadb.org
+    urls:
+    - https://bah3.github.io/helm-charts/mariadb-galera-5.9.0.tgz
+    version: 5.9.0
+  mongodb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 4.4.6
+    created: "2021-06-12T10:39:52.253792-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: NoSQL document-oriented database that stores JSON-like documents
+      with dynamic schemas, simplifying the integration of data in content-driven
+      applications.
+    digest: cab414abfcecc32799e9f256e87e372aa1695d3ec24b6e6ea112afffd5ae74be
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb
+    - https://mongodb.org
+    urls:
+    - https://bah3.github.io/helm-charts/mongodb-10.19.0.tgz
+    version: 10.19.0
+  mongodb-sharded:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 4.4.6
+    created: "2021-06-12T10:39:52.258987-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: NoSQL document-oriented database that stores JSON-like documents
+      with dynamic schemas, simplifying the integration of data in content-driven
+      applications. Sharded topology.
+    digest: 0f4337a8bde3734a7a1fff963cdc617a897ba237cc0304b5945ea0bcd903ab34
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb-sharded
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mongodb-sharded
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb-sharded
+    - https://mongodb.org
+    urls:
+    - https://bah3.github.io/helm-charts/mongodb-sharded-3.6.0.tgz
+    version: 3.6.0
+  nginx:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.21.0
+    created: "2021-06-12T10:39:52.262762-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Chart for the nginx server
+    digest: e23ba0c4e017a057f949eaf52e4549645d03b93cce6fec152f32848151c0c321
+    home: https://github.com/bitnami/charts/tree/master/bitnami/nginx
+    icon: https://bitnami.com/assets/stacks/nginx/img/nginx-stack-220x234.png
+    keywords:
+    - nginx
+    - http
+    - web
+    - www
+    - reverse proxy
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: nginx
+    sources:
+    - https://github.com/bitnami/bitnami-docker-nginx
+    - http://www.nginx.org
+    urls:
+    - https://bah3.github.io/helm-charts/nginx-9.1.0.tgz
+    version: 9.1.0
+  node:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 14.17.0
+    created: "2021-06-12T10:39:52.297751-04:00"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Event-driven I/O server-side JavaScript environment based on V8
+    digest: 6f7191d5c37eb064b26917419dfcbaaa40bc7373a29d4236fb724d6984566ef4
+    home: https://github.com/bitnami/charts/tree/master/bitnami/node
+    icon: https://bitnami.com/assets/stacks/nodejs/img/nodejs-stack-220x234.png
+    keywords:
+    - node
+    - javascript
+    - nodejs
+    - git
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: node
+    sources:
+    - https://github.com/bitnami/bitnami-docker-node
+    - http://nodejs.org/
+    urls:
+    - https://bah3.github.io/helm-charts/node-15.2.11.tgz
+    version: 15.2.11
+  owncloud:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 10.7.0
+    created: "2021-06-12T10:39:52.318445-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - owncloud-database
+      version: 9.x.x
+    description: A file sharing server that puts the control and security of your
+      own data back into your hands.
+    digest: 32a7490ee49fe1d2e36cc85c824329b551217a6bb183f5580ee42cd1449b6ca6
+    home: https://github.com/bitnami/charts/tree/master/bitnami/owncloud
+    icon: https://bitnami.com/assets/stacks/owncloud/img/owncloud-stack-220x234.png
+    keywords:
+    - owncloud
+    - storage
+    - http
+    - web
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: owncloud
+    sources:
+    - https://github.com/bitnami/bitnami-docker-owncloud
+    - https://owncloud.org/
+    urls:
+    - https://bah3.github.io/helm-charts/owncloud-10.2.13.tgz
+    version: 10.2.13
+  phpmyadmin:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 5.1.1
+    created: "2021-06-12T10:39:52.331168-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: db.bundleTestDB
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - phpmyadmin-database
+      version: 9.x.x
+    description: phpMyAdmin is an mysql administration frontend
+    digest: ab1849b8d9769e010f9888f0562a429ffaecdc3793b0a2ba8566968b9f82cb59
+    home: https://github.com/bitnami/charts/tree/master/bitnami/phpmyadmin
+    icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - phpmyadmin
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: phpmyadmin
+    sources:
+    - https://github.com/bitnami/bitnami-docker-phpmyadmin
+    - https://www.phpmyadmin.net/
+    urls:
+    - https://bah3.github.io/helm-charts/phpmyadmin-8.2.7.tgz
+    version: 8.2.7
+  postgresql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 11.12.0
+    created: "2021-06-12T10:39:52.341025-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Chart for PostgreSQL, an object-relational database management system
+      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: 9f64ff6268c2f57c7a1847871fb1f263e3a86e6b9084d9f40d08d444a912f8e6
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    - https://www.postgresql.org/
+    urls:
+    - https://bah3.github.io/helm-charts/postgresql-10.4.10.tgz
+    version: 10.4.10
+  postgresql-ha:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 11.12.0
+    created: "2021-06-12T10:39:52.349145-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Chart for PostgreSQL with HA architecture (using Replication Manager
+      (repmgr) and Pgpool).
+    digest: 99611cec6bc3bd8d1ecc3a2a104d83566f9b9c66af6ffffd26981eacdc4c2a43
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - repmgr
+    - pgpool
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    - high availability
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: postgresql-ha
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    - https://www.postgresql.org/
+    urls:
+    - https://bah3.github.io/helm-charts/postgresql-ha-7.6.3.tgz
+    version: 7.6.3
+  rabbitmq:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.8.17
+    created: "2021-06-12T10:39:52.356014-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Open source message broker software that implements the Advanced
+      Message Queuing Protocol (AMQP)
+    digest: 4af7a4c1562598a4bdd06f997f9164fbd27e5926c0b8e9dea230d412be96df7b
+    home: https://github.com/bitnami/charts/tree/master/bitnami/rabbitmq
+    icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+    keywords:
+    - rabbitmq
+    - message queue
+    - AMQP
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: rabbitmq
+    sources:
+    - https://github.com/bitnami/bitnami-docker-rabbitmq
+    - https://www.rabbitmq.com
+    urls:
+    - https://bah3.github.io/helm-charts/rabbitmq-8.15.3.tgz
+    version: 8.15.3
+  redis:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 6.2.4
+    created: "2021-06-12T10:39:52.365882-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Open source, advanced key-value store. It is often referred to as
+      a data structure server since keys can contain strings, hashes, lists, sets
+      and sorted sets.
+    digest: e710807e5041f4d0f93bd151068934afe1cc2c996dd8fffd7df54223c8a24fc5
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redis
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    - http://redis.io/
+    urls:
+    - https://bah3.github.io/helm-charts/redis-14.4.0.tgz
+    version: 14.4.0
+  redis-cluster:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 6.2.4
+    created: "2021-06-12T10:39:52.373725-04:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Open source, advanced key-value store. It is often referred to as
+      a data structure server since keys can contain strings, hashes, lists, sets
+      and sorted sets.
+    digest: 6773378cdfe84415b49fd51f31c17705c5a4e00dafe3b8500fa4f0156fa451e9
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: redis-cluster
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    - http://redis.io/
+    urls:
+    - https://bah3.github.io/helm-charts/redis-cluster-6.1.4.tgz
+    version: 6.1.4
+  vault:
+  - apiVersion: v2
+    appVersion: 1.7.2
+    created: "2021-06-12T10:39:52.378617-04:00"
+    description: Official HashiCorp Vault Chart
+    digest: e96126bd80e323758cbabaa9447c2c184cb8c987041b8f3725d2e5dcae8baac0
+    home: https://www.vaultproject.io
+    icon: https://github.com/hashicorp/vault/raw/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png
+    keywords:
+    - vault
+    - security
+    - encryption
+    - secrets
+    - management
+    - automation
+    - infrastructure
+    kubeVersion: '>= 1.14.0-0'
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault
+    - https://github.com/hashicorp/vault-helm
+    - https://github.com/hashicorp/vault-k8s
+    - https://github.com/hashicorp/vault-csi-provider
+    urls:
+    - https://bah3.github.io/helm-charts/vault-0.12.0.tgz
+    version: 0.12.0
+generated: "2021-06-12T10:39:52.122179-04:00"
